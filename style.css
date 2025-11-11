@@ -1,0 +1,187 @@
+/* Fondo general */
+body {
+  background: radial-gradient(circle at top, #ffffff 10%, #f5aacb 100%);
+  font-family: 'Poppins', sans-serif;
+  color: #354046;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Tarjeta principal */
+.card {
+  width: 320px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
+.card::after {
+  content: "Inspira con tu estilo";
+  display: block;
+  font-size: 0.9rem;
+  color: #e2c5f2;
+  margin-bottom: 20px;
+}
+
+/* Título */
+h2 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #354046;
+}
+
+/* Contenedor de botones */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Botón base */
+.star-button {
+  position: relative;
+  padding: 12px 35px;
+  background: #e2c5f2;
+  font-size: 16px;
+  font-weight: 600;
+  color: #04474B;
+  border: 2px solid #e2c5f2;
+  border-radius: 10px;
+  box-shadow: 0 0 0 #e2c5f2;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.star-button:hover {
+  background: transparent;
+  color: #D0B9BA;
+  box-shadow: 0 0 25px #d0b9ba8c;
+}
+
+/* Botones individuales con estilo unificado */
+.fb, .ig, .wa {
+  background: #e2c5f2;
+  border-color: #e2c5f2;
+  color: #04474B;
+}
+.fb:hover, .ig:hover, .wa:hover {
+  background: transparent;
+  color: #D0B9BA;
+  box-shadow: 0 0 25px #d0b9ba8c;
+}
+
+/* Menú desplegable */
+.select {
+  position: relative;
+}
+
+.catalog-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Flecha del botón */
+.arrow {
+  height: 10px;
+  width: 25px;
+  fill: #354046;
+  transition: 300ms;
+}
+
+.catalog-btn:hover .arrow {
+  transform: rotate(180deg);
+  fill: #D0B9BA;
+}
+
+/* Opciones del menú */
+.options {
+  display: none;
+  flex-direction: column;
+  background: #f4f4f4;
+  border-radius: 10px;
+  padding: 8px;
+  margin-top: 10px;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.options div {
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+  color: #354046;
+}
+
+.options div:hover {
+  background: #e0e0e0;
+}
+
+/* Mostrar menú */
+.show {
+  display: flex;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estrellas decorativas */
+.stars::before, .stars::after {
+  content: '';
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: sparkle 1.5s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.star-button .stars::before {
+  width: 5px;
+  height: 5px;
+  top: 10%;
+  left: 20%;
+  animation-delay: 0.2s;
+}
+
+.star-button .stars::after {
+  width: 8px;
+  height: 8px;
+  top: 60%;
+  left: 70%;
+  animation-delay: 0.6s;
+}
+
+.options a {
+  display: block;
+  background-color: #eee;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 8px;
+}
+.options a:hover {
+  background-color: #ddd;
+}
